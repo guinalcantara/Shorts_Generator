@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  shorts-generator:
+    build: .
+    container_name: shorts_generator
+    volumes:
+      # Montar diretórios para persistir dados
+      - ./data:/app/data
+      - ./output:/app/output
+      # Montar diretório de vídeos locais (opcional)
+      - ./videos:/app/videos:ro
+    environment:
+      # Configurações de ambiente
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_API_BASE=${OPENAI_API_BASE:-https://api.openai.com/v1}
+      - FFMPEG_PATH=/usr/bin/ffmpeg
+    working_dir: /app
+    # Comando interativo para desenvolvimento
+    stdin_open: true
+    tty: true
+    # Comando padrão (pode ser sobrescrito)
+    command: /bin/bash
+    
+    # Recursos opcionais (descomente se necessário)
+    # deploy:
+    #   resources:
+    #     limits:
+    #       memory: 4G
+    #       cpus: '2.0'
+    #     reservations:
+    #       memory: 2G
+    #       cpus: '1.0'
+
+# Volumes nomeados (opcional)
+volumes:
+  shorts_data:
+  shorts_output:
+

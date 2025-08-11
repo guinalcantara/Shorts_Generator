@@ -1,0 +1,52 @@
+# Arquivos e diretórios a serem ignorados pelo Docker
+
+# Dados temporários
+data/*
+output/*
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Ambientes virtuais
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Logs
+*.log
+
+# Arquivos de teste
+tests/
+pytest_cache/
+
+# Documentação
+docs/
+*.md
+!README.md
+
+# Arquivos de configuração local
+.env.local
+config.local.py
+

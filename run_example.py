@@ -46,7 +46,7 @@ def main():
     # shorts = generator.generate_shorts(youtube_url)
     
     # 3. Exemplo com arquivo de teste (substitua pelo seu arquivo)
-    test_video = "test_video.mp4"
+    test_video = r"C:\Users\guilh\Videos\Live - OBS\2025-08-09 21-59-52.mkv"
     
     if Path(test_video).exists():
         print(f"🎬 Processando vídeo: {test_video}")

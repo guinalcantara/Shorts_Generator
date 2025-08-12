@@ -12,6 +12,12 @@ from typing import Optional
 # Adicionar o diretório pai ao path para imports
 sys.path.append(str(Path(__file__).parent.parent))
 
+import os 
+from dotenv import load_dotenv
+
+# Carregar variáveis do arquivo .env
+load_dotenv()
+
 from src.video_ingestion import VideoIngestion
 from src.audio_processor import AudioProcessor
 from src.moment_identifier import MomentIdentifier
